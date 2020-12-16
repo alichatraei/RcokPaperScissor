@@ -1,25 +1,29 @@
 class Calculate extends UI {
   compareChoice(value) {
-    let comChoice = this.computerChoice(),
+    let compChoice = this.computerChoice(),
       userChoice = value;
-      console.log(userChoice + comChoice);
-    switch (userChoice + comChoice) {
+    console.log(userChoice + compChoice);
+    switch (userChoice + compChoice) {
       //if user win
       case "pr":
       case "rs":
       case "sp":
         // call won method in ui class
         this.userWon();
+        //show Status of the User & Computer choice
+        this.textStatus(userChoice, compChoice,'برنده شدید :)');
         break;
       case "ps":
       case "sr":
       case "rp":
         // call lose method in ui class
         this.userLose();
+        //show Status of the User & Computer choice
+        this.textStatus(userChoice, compChoice,'باختید :|');
         break;
       default:
-        // call draw method in ui class
-        this.draw();
+        //show Status of the User & Computer choice
+        this.textStatus(userChoice, compChoice,'مساوی شدید :/');
         break;
     }
   }
