@@ -1,0 +1,45 @@
+/* font */
+@font-face {
+  font-family: "vazir";
+  src: url("../fonts/Vazir.woff");
+}
+* {
+  font-family: "vazir";
+}
+/* Background Linear Color */
+body {
+    height: 100%;
+  background-image: linear-gradient(
+    to right top,
+    #ff7c87,
+    #ff7780,
+    #ff7178,
+    #ff6c71,
+    #ff6669,
+    #ff6163,
+    #ff5c5d,
+    #ff5757,
+    #ff5252,
+    #ff4c4c,
+    #ff4747,
+    #ff4141
+  );
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Images */
+.imgCircle {
+  width: 260px;
+  border-radius: 50%;
+  border: solid 0.3rem #ff4141;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 1s;
+  background-color: #ff7c87;
+}
+.imgCircle:hover {
+  cursor: pointer;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 1s;
+  border: solid 0.3rem #ff7c87;
+  background-color: #ff6669;
+}
