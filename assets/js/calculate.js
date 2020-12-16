@@ -2,19 +2,25 @@ class Calculate extends UI {
   compareChoice(value) {
     let comChoice = this.computerChoice(),
       userChoice = value;
+      console.log(userChoice + comChoice);
     switch (userChoice + comChoice) {
       //if user win
       case "pr":
       case "rs":
       case "sp":
         // call won method in ui class
-        this.won();
+        this.userWon();
         break;
       case "ps":
       case "sr":
       case "rp":
         // call lose method in ui class
-        this.lose();
+        this.userLose();
+        break;
+      default:
+        // call draw method in ui class
+        this.draw();
+        break;
     }
   }
   // select choice random
