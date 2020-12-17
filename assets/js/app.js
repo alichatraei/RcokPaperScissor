@@ -10,23 +10,24 @@ let calculate = new Calculate(),
 eventListeners();
 function eventListeners() {
   //paper Div clicked
-  paperDiv.addEventListener("click", () => {
+  paperDiv.addEventListener("click", (e) => {
     // forward paperDiv value
-    calculate.compareChoice("p");
+    calculate.compareChoice("p", e.target.parentElement);
+
     //remove game title
     gameTitle.remove();
   });
   //rock Div clicked
-  rockDiv.addEventListener("click", () => {
+  rockDiv.addEventListener("click", (e) => {
     // forward paperDiv value
-    calculate.compareChoice("r");
+    calculate.compareChoice("r", e.target.parentElement);
     //remove game title
     gameTitle.remove();
   });
   //scissor Div clicked
-  scissorDiv.addEventListener("click", () => {
+  scissorDiv.addEventListener("click", (e) => {
     // forward paperDiv value
-    calculate.compareChoice("s");
+    calculate.compareChoice("s", e.target);
     //remove game title
     gameTitle.remove();
   });

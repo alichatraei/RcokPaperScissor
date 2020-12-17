@@ -3,16 +3,28 @@ class UI {
     this.userScore = 1;
     this.compScore = 1;
   }
-  userWon() {
+  //win user function
+  userWon(target) {
     let userScoreDiv = document.querySelector("#userScore");
     userScoreDiv.textContent = this.userScore++;
-    console.log(userScoreDiv.textContent);
+    //change target style when user or computer won the set
+    target.setAttribute("style", "border: solid 0.3rem green;");
+    //set time out in 3000ms remove border style
+    setTimeout(() => {
+      target.setAttribute("style", "border: solid 0.3rem #ff4141;");
+    }, 3000);
   }
-  userLose() {
+  //lose user function
+  userLose(target) {
     let compScoreDiv = document.querySelector("#compScore");
     compScoreDiv.textContent = this.compScore++;
-    console.log(compScoreDiv.textContent);
+    target.setAttribute("style", "border: solid 0.3rem red;");
+    //set time out in 3000ms remove border style
+    setTimeout(() => {
+      target.setAttribute("style", "border: solid 0.3rem #ff4141;");
+    }, 3000);
   }
+  //change set of the game text status
   textStatus(user, comp, spanValue) {
     let textStatus = document.querySelector("#gameStatus");
     //convert user & computer choice to text
@@ -40,5 +52,4 @@ class UI {
     }
     textStatus.innerHTML = `انتخاب شما ${userValue} و انتخاب سیستم ${compValue}، پس شما <span class="text-danger">${spanValue}</span>`;
   }
-  
 }

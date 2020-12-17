@@ -1,5 +1,5 @@
 class Calculate extends UI {
-  compareChoice(value) {
+  compareChoice(value, target) {
     let compChoice = this.computerChoice(),
       userChoice = value;
     console.log(userChoice + compChoice);
@@ -9,21 +9,21 @@ class Calculate extends UI {
       case "rs":
       case "sp":
         // call won method in ui class
-        this.userWon();
+        this.userWon(target);
         //show Status of the User & Computer choice
-        this.textStatus(userChoice, compChoice,'برنده شدید :)');
+        this.textStatus(userChoice, compChoice, "برنده شدید :)");
         break;
       case "ps":
       case "sr":
       case "rp":
         // call lose method in ui class
-        this.userLose();
+        this.userLose(target);
         //show Status of the User & Computer choice
-        this.textStatus(userChoice, compChoice,'باختید :|');
+        this.textStatus(userChoice, compChoice, "باختید :|");
         break;
       default:
         //show Status of the User & Computer choice
-        this.textStatus(userChoice, compChoice,'مساوی شدید :/');
+        this.textStatus(userChoice, compChoice, "مساوی شدید :/");
         break;
     }
   }
